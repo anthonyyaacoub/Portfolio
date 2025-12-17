@@ -1,0 +1,591 @@
+---
+title: ""
+page-layout: full
+---
+
+<style>
+/* Dark Theme - Red & Black CV */
+body {
+  background-color: #0a0a0a !important;
+  color: #f5f5f5 !important;
+}
+
+.cv-hero {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-bottom: 3px solid #DC2626;
+  margin-bottom: 4rem;
+}
+
+.cv-hero h1 {
+  font-size: 3.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.cv-hero .subtitle {
+  font-size: 1.3rem;
+  color: #DC2626;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.cv-hero .tagline {
+  font-size: 1.1rem;
+  color: #9ca3af;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+
+.btn-download {
+  display: inline-block;
+  background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+  color: white !important;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+  margin: 0.5rem;
+}
+
+.btn-download:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.5);
+}
+
+.btn-outline {
+  background: transparent !important;
+  border: 2px solid #DC2626;
+  color: #DC2626 !important;
+}
+
+.btn-outline:hover {
+  background: #DC2626 !important;
+  color: white !important;
+}
+
+.cv-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem 2rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #DC2626;
+  margin: 3rem 0 2rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid #DC2626;
+  font-weight: 700;
+}
+
+.experience-card {
+  background: #1a1a1a;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  border: 2px solid #2a2a2a;
+  border-left: 5px solid #DC2626;
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+  border-left-width: 8px;
+  transform: translateX(8px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+}
+
+.exp-title {
+  font-size: 1.5rem;
+  color: #EF4444;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.exp-company {
+  font-size: 1.2rem;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.exp-meta {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.exp-description {
+  color: #d1d5db;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.exp-description ul {
+  list-style: none;
+  padding: 0;
+}
+
+.exp-description li {
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  position: relative;
+}
+
+.exp-description li::before {
+  content: '▸';
+  color: #DC2626;
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+.achievement-box {
+  background: #0a0a0a;
+  padding: 1.25rem;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  border-left: 3px solid #EF4444;
+}
+
+.achievement-box strong {
+  color: #EF4444;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.education-card {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #2a2a2a;
+  border-top: 4px solid #DC2626;
+  transition: all 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+}
+
+.edu-degree {
+  font-size: 1.3rem;
+  color: #EF4444;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.edu-school {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.edu-date {
+  color: #9ca3af;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.edu-details {
+  color: #d1d5db;
+  line-height: 1.8;
+}
+
+.skill-category {
+  background: #1a1a1a;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  border: 2px solid #2a2a2a;
+}
+
+.skill-category h3 {
+  color: #DC2626;
+  font-size: 1.3rem;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-badge {
+  background: rgba(220, 38, 38, 0.15);
+  color: #EF4444;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+  background: rgba(220, 38, 38, 0.3);
+  transform: translateY(-2px);
+}
+
+.cert-item {
+  background: #1a1a1a;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 2px solid #2a2a2a;
+  border-left: 4px solid #DC2626;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cert-name {
+  font-size: 1.1rem;
+  color: #EF4444;
+  font-weight: 600;
+}
+
+.cert-status {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.info-card {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #2a2a2a;
+  text-align: center;
+}
+
+.info-card h3 {
+  color: #DC2626;
+  font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.info-card p {
+  color: #d1d5db;
+  line-height: 2;
+  font-size: 1.05rem;
+}
+
+.contact-footer {
+  background: #1a1a1a;
+  padding: 3rem;
+  border-radius: 12px;
+  text-align: center;
+  margin: 4rem 0 2rem 0;
+  border: 2px solid #DC2626;
+}
+
+.contact-footer h3 {
+  color: #DC2626;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.contact-item {
+  color: #d1d5db;
+  font-size: 1.05rem;
+  padding: 1rem;
+  background: #0a0a0a;
+  border-radius: 8px;
+}
+
+.contact-item a {
+  color: #EF4444;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .cv-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .education-grid,
+  .info-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<div class="cv-hero">
+<h1>Curriculum Vitae</h1>
+<p class="subtitle">Anthony Yaacoub</p>
+<p class="tagline">Computer Scientist & Data Analyst specializing in production-grade machine learning systems and scalable data infrastructure</p>
+
+<a href="assets/files/Anthony_Yaacoub_CV.pdf" class="btn-download">📄 Download PDF</a>
+<a href="projects/index.qmd" class="btn-download btn-outline">🚀 View Projects</a>
+</div>
+
+<div class="cv-container">
+
+<h2 class="section-title">Professional Experience</h2>
+
+<div class="experience-card">
+<div class="exp-title">Junior Data Analyst</div>
+<div class="exp-company">Futurity Systems</div>
+<div class="exp-meta">April 2024 - Present | Barcelona, Spain</div>
+
+<div class="exp-description">
+<ul>
+<li>Gather and analyze data from multiple sources to identify patterns, trends, and actionable insights</li>
+<li>Utilize Python for data cleaning, manipulation, and analysis using pandas, NumPy, and scikit-learn</li>
+<li>Contribute to developing and implementing data models and algorithms to address business challenges</li>
+<li>Build automated reporting pipelines using Apache Airflow for weekly executive dashboards</li>
+<li>Collaborate with cross-functional teams to translate business requirements into technical solutions</li>
+</ul>
+
+<div class="achievement-box">
+<strong>Key Achievement:</strong> Reduced data processing time by 40% through optimized SQL queries and parallel processing
+</div>
+</div>
+</div>
+
+<div class="experience-card">
+<div class="exp-title">Machine Learning and NLP Intern</div>
+<div class="exp-company">Futurity Systems</div>
+<div class="exp-meta">April 2023 - August 2023 | Barcelona, Spain</div>
+
+<div class="exp-description">
+<ul>
+<li>Assisted in developing a generative AI model using advanced machine learning techniques</li>
+<li>Conducted web scraping and performed NLP processes to extract and summarize critical information</li>
+<li>Implemented transformer-based models (BERT, GPT-2) for text generation and classification</li>
+<li>Built data pipelines for preprocessing unstructured text data from multiple sources</li>
+<li>Documented model architecture and training procedures for knowledge transfer</li>
+</ul>
+
+<div class="achievement-box">
+<strong>Key Achievement:</strong> Developed a document summarization system that processed 1,000+ pages daily with 85% accuracy
+</div>
+</div>
+</div>
+
+<div class="experience-card">
+<div class="exp-title">Full Stack Developer</div>
+<div class="exp-company">Starlynr</div>
+<div class="exp-meta">August 2022 - April 2023 | Barcelona, Spain</div>
+
+<div class="exp-description">
+<ul>
+<li>Designed and maintained web applications and mobile platforms using React and Node.js</li>
+<li>Managed server maintenance and optimized backend systems to enhance performance</li>
+<li>Implemented RESTful APIs and database schemas (PostgreSQL, MongoDB)</li>
+<li>Conducted code reviews and mentored junior developers on best practices</li>
+<li>Deployed applications using Docker and managed CI/CD pipelines</li>
+</ul>
+
+<div class="achievement-box">
+<strong>Key Achievement:</strong> Improved application response time by 50% through backend optimization and caching strategies
+</div>
+</div>
+</div>
+
+<div class="experience-card">
+<div class="exp-title">IT Department</div>
+<div class="exp-company">Capital Y Holding</div>
+<div class="exp-meta">June 2021 - August 2022 | Dubai, UAE</div>
+
+<div class="exp-description">
+<ul>
+<li>Assisted in development of the Starlynr platform, a teeth aligner solution</li>
+<li>Collaborated with experienced professionals to exchange technical knowledge</li>
+<li>Trained and mentored three new team members in IT workflows and processes</li>
+<li>Maintained technical documentation and standard operating procedures</li>
+</ul>
+</div>
+</div>
+
+<h2 class="section-title">Education</h2>
+
+<div class="education-grid">
+<div class="education-card">
+<div class="edu-degree">Dual Master's Degree</div>
+<div class="edu-degree">Management & Business Analytics</div>
+<div class="edu-school">IE Business School, Madrid</div>
+<div class="edu-date">Expected: July 2027</div>
+<div class="edu-details">Specializing in machine learning operations, data engineering, and strategic decision-making.</div>
+</div>
+
+<div class="education-card">
+<div class="edu-degree">Bachelor of Science</div>
+<div class="edu-degree">Computer Science & AI</div>
+<div class="edu-school">IE University, Madrid</div>
+<div class="edu-date">Graduated: July 2024</div>
+<div class="edu-details">Strong foundation in algorithms, data structures, and system design. Dean's List recognition.</div>
+</div>
+</div>
+
+<h2 class="section-title">Technical Skills</h2>
+
+<div class="skill-category">
+<h3>Programming Languages</h3>
+<div class="skill-badges">
+<span class="skill-badge">Python</span>
+<span class="skill-badge">R</span>
+<span class="skill-badge">SQL</span>
+<span class="skill-badge">JavaScript</span>
+<span class="skill-badge">TypeScript</span>
+<span class="skill-badge">C++</span>
+<span class="skill-badge">C#</span>
+</div>
+</div>
+
+<div class="skill-category">
+<h3>Machine Learning & AI</h3>
+<div class="skill-badges">
+<span class="skill-badge">Scikit-learn</span>
+<span class="skill-badge">PyTorch</span>
+<span class="skill-badge">TensorFlow</span>
+<span class="skill-badge">Hugging Face</span>
+<span class="skill-badge">MLflow</span>
+<span class="skill-badge">Optuna</span>
+<span class="skill-badge">Weights & Biases</span>
+</div>
+</div>
+
+<div class="skill-category">
+<h3>Data Engineering & Cloud</h3>
+<div class="skill-badges">
+<span class="skill-badge">Apache Airflow</span>
+<span class="skill-badge">Kafka</span>
+<span class="skill-badge">dbt</span>
+<span class="skill-badge">Spark</span>
+<span class="skill-badge">Docker</span>
+<span class="skill-badge">Kubernetes</span>
+<span class="skill-badge">AWS</span>
+<span class="skill-badge">GCP</span>
+<span class="skill-badge">Terraform</span>
+</div>
+</div>
+
+<div class="skill-category">
+<h3>Web Development</h3>
+<div class="skill-badges">
+<span class="skill-badge">FastAPI</span>
+<span class="skill-badge">Flask</span>
+<span class="skill-badge">React</span>
+<span class="skill-badge">Node.js</span>
+<span class="skill-badge">Next.js</span>
+<span class="skill-badge">Express</span>
+</div>
+</div>
+
+<div class="skill-category">
+<h3>Databases & Visualization</h3>
+<div class="skill-badges">
+<span class="skill-badge">PostgreSQL</span>
+<span class="skill-badge">MongoDB</span>
+<span class="skill-badge">Redis</span>
+<span class="skill-badge">Neo4j</span>
+<span class="skill-badge">BigQuery</span>
+<span class="skill-badge">Tableau</span>
+<span class="skill-badge">Power BI</span>
+<span class="skill-badge">Streamlit</span>
+</div>
+</div>
+
+<h2 class="section-title">Certifications & Training</h2>
+
+<div class="cert-item">
+<div class="cert-name">AWS Certified Cloud Practitioner</div>
+<div class="cert-status">In Progress</div>
+</div>
+
+<div class="cert-item">
+<div class="cert-name">Google Data Analytics Professional Certificate</div>
+<div class="cert-status">Completed</div>
+</div>
+
+<div class="cert-item">
+<div class="cert-name">Deep Learning Specialization - Coursera</div>
+<div class="cert-status">Completed</div>
+</div>
+
+<h2 class="section-title">Additional Information</h2>
+
+<div class="info-grid">
+<div class="info-card">
+<h3>Languages</h3>
+<p>
+<strong style="color: #EF4444;">English:</strong> Native<br>
+<strong style="color: #EF4444;">Arabic:</strong> Native<br>
+<strong style="color: #EF4444;">French:</strong> Fluent (C1)<br>
+<strong style="color: #EF4444;">Spanish:</strong> Intermediate (B1-B2)
+</p>
+</div>
+
+<div class="info-card">
+<h3>Interests</h3>
+<p>
+Chess ♟️ • Football ⚽<br>
+Skiing ⛷️ • Volleyball<br>
+Basketball 🏀 • Traveling ✈️<br>
+Sudoku 🧩
+</p>
+</div>
+
+<div class="info-card">
+<h3>Volunteer Work</h3>
+<p>
+Lebanese Red Cross volunteer<br>
+Beirut explosion relief (2020)<br>
+Math tutoring for students<br>
+(2017-2020)
+</p>
+</div>
+</div>
+
+<div class="contact-footer">
+<h3>Contact Information</h3>
+
+<div class="contact-grid">
+<div class="contact-item">
+📍 Madrid, Spain<br>
+EU Work Permit
+</div>
+<div class="contact-item">
+📞 <a href="tel:+34652333855">(+34) 652 333 855</a>
+</div>
+<div class="contact-item">
+✉️ <a href="mailto:ayaacoub@student.ie.edu">ayaacoub@student.ie.edu</a>
+</div>
+<div class="contact-item">
+💼 <a href="https://linkedin.com/in/anthony-yaacoub-37590a1a6" target="_blank">LinkedIn</a>
+</div>
+<div class="contact-item">
+💻 <a href="https://github.com/anthonyyaacoub" target="_blank">GitHub</a>
+</div>
+</div>
+</div>
+
+</div>

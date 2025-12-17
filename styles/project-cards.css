@@ -1,0 +1,58 @@
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.tech-badge {
+  display: inline-block;
+  background-color: #e1e8ed;
+  color: #2C3E50;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+/* Button styling for hero section */
+.btn-primary {
+  background-color: #3498DB;
+  border-color: #3498DB;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #2980B9;
+  border-color: #2980B9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-outline-secondary {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  transition: all 0.2s;
+}
+
+.btn-outline-secondary:hover {
+  background-color: white;
+  color: #2C3E50;
+  transform: translateY(-2px);
+}

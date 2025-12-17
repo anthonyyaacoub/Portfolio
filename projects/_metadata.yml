@@ -1,0 +1,17 @@
+# Shared metadata for all case studies
+freeze: auto
+author: "Anthony Yaacoub"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-tools: true
+
+# Projects listing configuration
+listing:
+  contents: case-studies
+  sort: "date desc"
+  type: grid
+  grid-columns: 2
+  image-height: 250px

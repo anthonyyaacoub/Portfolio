@@ -1,0 +1,476 @@
+---
+title: ""
+page-layout: full
+---
+
+<style>
+/* Dark Theme - Red & Black Blog */
+body {
+  background-color: #0a0a0a !important;
+  color: #f5f5f5 !important;
+}
+
+.blog-hero {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-bottom: 3px solid #DC2626;
+  margin-bottom: 4rem;
+}
+
+.blog-hero h1 {
+  font-size: 3.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 30px rgba(220, 38, 38, 0.3);
+}
+
+.blog-hero .subtitle {
+  font-size: 1.2rem;
+  color: #9ca3af;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.blog-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem 2rem;
+}
+
+.intro-section {
+  max-width: 900px;
+  margin: 0 auto 4rem auto;
+  padding: 2.5rem;
+  background: #1a1a1a;
+  border-radius: 12px;
+  border-left: 4px solid #DC2626;
+  text-align: center;
+}
+
+.intro-section p {
+  color: #d1d5db;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.intro-section strong {
+  color: #EF4444;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #DC2626;
+  margin: 4rem 0 2rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid #DC2626;
+  font-weight: 700;
+  text-align: center;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.topic-card {
+  background: #1a1a1a;
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 2px solid #2a2a2a;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.topic-card:hover {
+  border-color: #DC2626;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+}
+
+.topic-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.topic-card h3 {
+  color: #EF4444;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.topic-card p {
+  color: #9ca3af;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.topic-examples {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.topic-examples li {
+  color: #d1d5db;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.topic-examples li::before {
+  content: '▸';
+  color: #DC2626;
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  font-size: 1.1rem;
+}
+
+.upcoming-posts {
+  max-width: 900px;
+  margin: 3rem auto;
+}
+
+.post-preview {
+  background: #1a1a1a;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #2a2a2a;
+  border-left: 4px solid #DC2626;
+  transition: all 0.3s ease;
+}
+
+.post-preview:hover {
+  transform: translateX(8px);
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2);
+}
+
+.post-preview h4 {
+  color: #EF4444;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.post-meta {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.post-preview p {
+  color: #d1d5db;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.coming-soon-badge {
+  display: inline-block;
+  background: rgba(220, 38, 38, 0.2);
+  color: #EF4444;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgba(220, 38, 38, 0.4);
+  margin-left: 0.5rem;
+}
+
+.philosophy-section {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 3rem;
+  background: #1a1a1a;
+  border-radius: 12px;
+  border: 2px solid #DC2626;
+}
+
+.philosophy-section h3 {
+  color: #DC2626;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.philosophy-section p {
+  color: #d1d5db;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.philosophy-item {
+  background: #0a0a0a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 3px solid #DC2626;
+}
+
+.philosophy-item h4 {
+  color: #EF4444;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.philosophy-item p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.subscribe-section {
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 3rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  border-radius: 12px;
+  border: 2px solid #DC2626;
+  text-align: center;
+}
+
+.subscribe-section h3 {
+  color: #DC2626;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.subscribe-section p {
+  color: #d1d5db;
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.subscribe-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-subscribe {
+  display: inline-block;
+  background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+  color: white !important;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.btn-subscribe:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.5);
+}
+
+.social-link {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 1.05rem;
+  padding: 1rem 2rem;
+  border: 2px solid #2a2a2a;
+  border-radius: 8px;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.social-link:hover {
+  color: #DC2626;
+  border-color: #DC2626;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .blog-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .topics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .subscribe-links {
+    flex-direction: column;
+  }
+}
+</style>
+
+<div class="blog-hero">
+<h1>Technical Blog</h1>
+<p class="subtitle">Deep dives into ML engineering, data architecture, and system design</p>
+</div>
+
+<div class="blog-container">
+
+<div class="intro-section">
+<p>
+Welcome to my technical blog, where I explore the intersection of <strong>Computer Science</strong> and <strong>Data Analytics</strong>. Here, I share lessons learned from building production systems, architectural decisions, and engineering best practices.
+</p>
+</div>
+
+<h2 class="section-title">What You'll Find Here</h2>
+
+<div class="topics-grid">
+
+<div class="topic-card">
+<div class="topic-icon">🔧</div>
+<h3>ML Engineering</h3>
+<p>Building production-grade machine learning systems that scale</p>
+<ul class="topic-examples">
+<li>Model deployment strategies</li>
+<li>MLOps workflows & automation</li>
+<li>Hyperparameter optimization</li>
+<li>Model monitoring & drift detection</li>
+</ul>
+</div>
+
+<div class="topic-card">
+<div class="topic-icon">🏗️</div>
+<h3>Data Architecture</h3>
+<p>Designing scalable ETL pipelines and data infrastructure</p>
+<ul class="topic-examples">
+<li>ETL vs ELT design patterns</li>
+<li>Real-time data processing</li>
+<li>Data warehousing strategies</li>
+<li>Pipeline orchestration</li>
+</ul>
+</div>
+
+<div class="topic-card">
+<div class="topic-icon">⚙️</div>
+<h3>System Design</h3>
+<p>Trade-offs, patterns, and architectural decisions</p>
+<ul class="topic-examples">
+<li>API design best practices</li>
+<li>Microservices vs monoliths</li>
+<li>Database selection criteria</li>
+<li>Performance optimization</li>
+</ul>
+</div>
+
+<div class="topic-card">
+<div class="topic-icon">🧪</div>
+<h3>Engineering Practices</h3>
+<p>Testing, CI/CD, and code quality for data systems</p>
+<ul class="topic-examples">
+<li>Testing data pipelines</li>
+<li>Docker & containerization</li>
+<li>Git workflows for teams</li>
+<li>Code review strategies</li>
+</ul>
+</div>
+
+</div>
+
+<h2 class="section-title">Upcoming Posts</h2>
+
+<div class="upcoming-posts">
+
+<div class="post-preview">
+<h4>ETL Design Patterns: Lessons from Production <span class="coming-soon-badge">Coming Soon</span></h4>
+<div class="post-meta">ML Engineering • Data Architecture</div>
+<p>
+A deep dive into building robust ETL pipelines, covering idempotency, error handling, backfilling strategies, and real-world lessons from processing millions of records daily.
+</p>
+</div>
+
+<div class="post-preview">
+<h4>FastAPI vs Flask: When to Use Each for ML Deployment <span class="coming-soon-badge">Coming Soon</span></h4>
+<div class="post-meta">ML Engineering • System Design</div>
+<p>
+Comparing two popular Python frameworks for deploying ML models. We'll examine performance benchmarks, async capabilities, type safety, and production readiness.
+</p>
+</div>
+
+<div class="post-preview">
+<h4>Testing Data Quality: Automated Validation Strategies <span class="coming-soon-badge">Coming Soon</span></h4>
+<div class="post-meta">Engineering Practices • Data Architecture</div>
+<p>
+How to build comprehensive data quality checks using Great Expectations, pytest, and custom validators. Includes real examples from production pipelines.
+</p>
+</div>
+
+<div class="post-preview">
+<h4>From Notebook to Production: Refactoring ML Code <span class="coming-soon-badge">Coming Soon</span></h4>
+<div class="post-meta">ML Engineering • Engineering Practices</div>
+<p>
+Step-by-step guide to transforming exploratory Jupyter notebooks into production-ready, testable, and maintainable ML systems with proper OOP design.
+</p>
+</div>
+
+</div>
+
+<div class="philosophy-section">
+<h3>My Writing Philosophy</h3>
+<p>
+Each post follows a <strong>problem-solution format</strong> with real-world context. I focus on the "how" and "why" behind technical decisions, not just the "what."
+</p>
+
+<div class="philosophy-grid">
+<div class="philosophy-item">
+<h4>1. Business Context</h4>
+<p>What problem are we solving and why does it matter?</p>
+</div>
+
+<div class="philosophy-item">
+<h4>2. Technical Challenges</h4>
+<p>What constraints and difficulties did we face?</p>
+</div>
+
+<div class="philosophy-item">
+<h4>3. Engineering Solution</h4>
+<p>How did we solve it with code, architecture, and tools?</p>
+</div>
+
+<div class="philosophy-item">
+<h4>4. Lessons Learned</h4>
+<p>What would we do differently next time?</p>
+</div>
+</div>
+</div>
+
+<div class="subscribe-section">
+<h3>Stay Updated</h3>
+<p>
+Want to be notified when I publish new posts? Follow me on LinkedIn or connect on GitHub to never miss an update.
+</p>
+
+<div class="subscribe-links">
+<a href="https://linkedin.com/in/anthony-yaacoub-37590a1a6" target="_blank" class="btn-subscribe">
+💼 Follow on LinkedIn
+</a>
+<a href="https://github.com/anthonyyaacoub" target="_blank" class="social-link">
+💻 GitHub Profile
+</a>
+</div>
+
+<p style="margin-top: 2rem; color: #9ca3af; font-size: 0.95rem;">
+First posts expected <strong>January 2025</strong>
+</p>
+</div>
+
+</div>

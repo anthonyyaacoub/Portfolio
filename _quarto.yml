@@ -1,0 +1,50 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Anthony Yaacoub"
+  description: "Computer Scientist & Data Analyst | Building Scalable ML Systems"
+  site-url: "https://anthony-yaacoub.github.io"
+  repo-url: "https://github.com/anthony-yaacoub/portfolio"
+  repo-actions: [edit, issue]
+  
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Projects"
+        href: projects/index.qmd
+      - text: "Blog"
+        href: blog/index.qmd
+      - text: "About"
+        href: about.qmd
+      - text: "CV"
+        href: cv.qmd
+    right:
+      - icon: github
+        href: "https://github.com/anthony-yaacoub"
+      - icon: linkedin
+        href: "https://linkedin.com/in/anthony-yaacoub-37590a1a6"
+  
+  page-footer:
+    left: "© 2024 Anthony Yaacoub. Built with [Quarto](https://quarto.org)."
+    right:
+      - icon: envelope
+        href: "mailto:ayaacoub@student.ie.edu"
+      - icon: github
+        href: "https://github.com/anthony-yaacoub"
+
+format:
+  html:
+    theme: 
+      - cosmo
+      - styles/custom.scss
+    css: styles/project-cards.css
+    toc: true
+    code-copy: true
+    code-fold: show
+    code-tools: true
+    highlight-style: github

@@ -1,0 +1,574 @@
+---
+title: ""
+page-layout: full
+---
+
+<style>
+/* Dark Theme - Red & Black (matching home page) */
+body {
+  background-color: #0a0a0a !important;
+  color: #f5f5f5 !important;
+}
+
+.about-hero {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  padding: 4rem 2rem 2rem 2rem;
+  text-align: center;
+  border-bottom: 3px solid #DC2626;
+  margin-bottom: 3rem;
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 30px rgba(220, 38, 38, 0.3);
+}
+
+.profile-header {
+  max-width: 1200px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.profile-avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+  margin: 0 auto 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 0 40px rgba(220, 38, 38, 0.4);
+  border: 4px solid #1a1a1a;
+}
+
+.avatar-placeholder {
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  color: #6b7280;
+  font-style: italic;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.connect-links-horizontal {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.connect-link-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #1a1a1a;
+  border: 2px solid #2a2a2a;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #f5f5f5;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.connect-link-inline:hover {
+  border-color: #DC2626;
+  background: #0a0a0a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.content-tabs {
+  background: #1a1a1a;
+  border-radius: 12px;
+  border: 2px solid #2a2a2a;
+  overflow: hidden;
+}
+
+.tab-nav {
+  display: flex;
+  background: #0a0a0a;
+  border-bottom: 2px solid #2a2a2a;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 1.25rem 2rem;
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-button:hover {
+  color: #f5f5f5;
+  background: #1a1a1a;
+}
+
+.tab-button.active {
+  color: #DC2626;
+  border-bottom-color: #DC2626;
+  background: #1a1a1a;
+}
+
+.tab-content {
+  padding: 3rem 4rem;
+}
+
+.section-header {
+  font-size: 2rem;
+  color: #DC2626;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #2a2a2a;
+}
+
+.section-header:first-of-type {
+  margin-top: 0;
+}
+
+.highlight-box {
+  background: #0a0a0a;
+  border: 2px solid #2a2a2a;
+  border-left: 4px solid #DC2626;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+}
+
+.highlight-box p {
+  margin: 0;
+  line-height: 2;
+  color: #d1d5db;
+  font-size: 1.05rem;
+}
+
+.highlight-box strong {
+  color: #EF4444;
+}
+
+.content-section {
+  margin: 2rem 0;
+  line-height: 2;
+  color: #d1d5db;
+  font-size: 1.05rem;
+}
+
+.content-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.content-section li {
+  padding: 0.75rem 0;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.content-section li::before {
+  content: '▸';
+  color: #DC2626;
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+.content-section strong {
+  color: #EF4444;
+  font-weight: 600;
+}
+
+.skill-badges {
+  margin: 1.5rem 0;
+}
+
+.skill-badge {
+  display: inline-block;
+  background: rgba(220, 38, 38, 0.2);
+  color: #EF4444;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  margin: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.education-item {
+  background: #0a0a0a;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  border: 2px solid #2a2a2a;
+  border-left: 4px solid #DC2626;
+}
+
+.education-item strong {
+  color: #EF4444;
+  font-size: 1.1rem;
+}
+
+.education-institution {
+  color: #9ca3af;
+  font-style: italic;
+  margin-top: 0.25rem;
+}
+
+.cta-section {
+  background: #1a1a1a;
+  padding: 3rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 3rem;
+  border: 2px solid #2a2a2a;
+}
+
+.cta-section h3 {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-contact {
+  display: inline-block;
+  background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.btn-contact:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.5);
+}
+
+@media (max-width: 1024px) {
+  .tab-content {
+    padding: 2rem 3rem;
+  }
+  
+  .connect-links-horizontal {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .connect-link-inline {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .profile-avatar {
+    width: 150px;
+    height: 150px;
+    font-size: 3rem;
+  }
+  
+  .tab-content {
+    padding: 2rem 1.5rem;
+  }
+  
+  .tab-button {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+</style>
+
+<div class="about-hero">
+  <h1>About Me</h1>
+</div>
+
+<div class="profile-header">
+
+<img src="assets/images/headshot.jpeg" alt="Anthony Yaacoub" style="width: 200px; height: auto; border-radius: 20px; border: 4px solid #DC2626; box-shadow: 0 0 40px rgba(220, 38, 38, 0.4); margin: 0 auto; display: block;">
+<p class="avatar-placeholder" style="display: none;">Professional photo coming soon</p>
+
+<div class="connect-links-horizontal">
+<a href="https://github.com/anthonyyaacoub" target="_blank" class="connect-link-inline">
+🔗 GitHub
+</a>
+
+<a href="https://linkedin.com/in/anthony-yaacoub-37590a1a6" target="_blank" class="connect-link-inline">
+💼 LinkedIn
+</a>
+
+<a href="mailto:ayaacoub@student.ie.edu" class="connect-link-inline">
+✉️ Email
+</a>
+
+<a href="assets/files/Anthony_Yaacoub_CV.pdf" class="connect-link-inline">
+📄 Download CV
+</a>
+</div>
+
+</div>
+
+<div class="main-content">
+
+<div class="content-tabs">
+
+<div class="tab-nav">
+  <button class="tab-button active" onclick="showTab('english')">English</button>
+  <button class="tab-button" onclick="showTab('spanish')">Español</button>
+</div>
+
+<div id="english-tab" class="tab-content">
+
+<div class="highlight-box">
+
+### 👨‍💻 Who I Am
+
+I'm a **Computer Scientist and Data Analyst** specializing in building scalable machine learning systems and data infrastructure. Currently pursuing a Dual Master's in Management and Business Analytics at IE Business School in Madrid.
+
+My background bridges theoretical CS foundations (algorithms, system design) with hands-on analytics (ML modeling, ETL pipelines, BI dashboards). I eliminate the "translation gap" between data science prototypes and production systems.
+
+</div>
+
+<h3 class="section-header">🎯 What I Do</h3>
+
+<div class="content-section">
+
+**Type B Data Science**: I build the systems that insights flow through, not just the insights themselves.
+
+- **End-to-End Ownership**: From raw data ingestion to deployed APIs and interactive dashboards
+- **Engineering Rigor**: CI/CD pipelines, unit testing, type safety, and modular architecture
+- **Production-Grade Code**: Object-oriented design patterns (Strategy, Factory, Adapter)
+- **Cloud-Native**: Experience with AWS, GCP, and containerized deployments
+
+</div>
+
+<h3 class="section-header">💡 Technical Philosophy</h3>
+
+<div class="content-section">
+
+I reject "notebook-centric" workflows. My projects demonstrate:
+
+<div class="highlight-box">
+
+✅ **Modular Architecture**: Separation of concerns (data, features, models, API)  
+✅ **Test-Driven Development**: pytest coverage for data transformations and model inference  
+✅ **API-First Design**: FastAPI with Pydantic validation and auto-generated documentation  
+✅ **Infrastructure as Code**: Docker, Terraform, and GitHub Actions for reproducibility
+
+</div>
+
+</div>
+
+<h3 class="section-header">🎓 Background</h3>
+
+<div class="content-section">
+
+<div class="education-item">
+<strong>Master's in Business Analytics & Data Science</strong> (In Progress)  
+<div class="education-institution">IE Business School, Madrid</div>
+</div>
+
+<div class="education-item">
+<strong>Master's in Management</strong> (In Progress)  
+<div class="education-institution">IE Business School, Madrid</div>
+</div>
+
+<div class="education-item">
+<strong>Bachelor's in Computer Science & AI</strong> (2024)  
+<div class="education-institution">IE University, Madrid</div>
+</div>
+
+**Experience:**
+- Junior Data Analyst at **Futurity Systems** (Barcelona)
+- ML & NLP Intern at **Futurity Systems**
+- Full Stack Developer at **Starlynr**
+
+**Languages:**
+
+<div class="skill-badges">
+<span class="skill-badge">English (Native)</span>
+<span class="skill-badge">Arabic (Native)</span>
+<span class="skill-badge">French (Fluent)</span>
+<span class="skill-badge">Spanish (Intermediate)</span>
+</div>
+
+</div>
+
+<h3 class="section-header">🌟 Beyond Work</h3>
+
+<div class="content-section">
+
+When I'm not building data systems, you'll find me:
+- Playing chess ♟️ (strategy games sharpen analytical thinking)
+- On the football pitch ⚽
+- Solving Sudoku puzzles
+- Exploring Madrid's tech meetup scene
+
+</div>
+
+</div>
+
+<div id="spanish-tab" class="tab-content" style="display: none;">
+
+<div class="highlight-box">
+
+### 👨‍💻 Quién Soy
+
+Soy un **Científico de Computación y Analista de Datos** especializado en construir sistemas de machine learning escalables e infraestructura de datos. Actualmente curso un Máster Dual en Dirección de Empresas y Analítica de Negocios en IE Business School, Madrid.
+
+Mi experiencia une fundamentos teóricos de Ciencias de la Computación (algoritmos, diseño de sistemas) con analítica práctica (modelado ML, pipelines ETL, dashboards BI). Elimino la "brecha de traducción" entre prototipos de data science y sistemas en producción.
+
+</div>
+
+<h3 class="section-header">🎯 Qué Hago</h3>
+
+<div class="content-section">
+
+**Data Science Tipo B**: Construyo los sistemas por los que fluyen los insights, no solo los insights mismos.
+
+- **Responsabilidad End-to-End**: Desde la ingesta de datos hasta APIs desplegadas y dashboards interactivos
+- **Rigor Ingenieril**: Pipelines CI/CD, pruebas unitarias, type safety y arquitectura modular
+- **Código de Producción**: Patrones de diseño orientado a objetos (Strategy, Factory, Adapter)
+- **Cloud-Native**: Experiencia con AWS, GCP y despliegues containerizados
+
+</div>
+
+<h3 class="section-header">💡 Filosofía Técnica</h3>
+
+<div class="content-section">
+
+Rechazo los flujos de trabajo centrados en notebooks. Mis proyectos demuestran:
+
+<div class="highlight-box">
+
+✅ **Arquitectura Modular**: Separación de responsabilidades (datos, features, modelos, API)  
+✅ **Desarrollo Guiado por Pruebas**: Cobertura pytest para transformaciones de datos e inferencia  
+✅ **Diseño API-First**: FastAPI con validación Pydantic y documentación auto-generada  
+✅ **Infraestructura como Código**: Docker, Terraform y GitHub Actions para reproducibilidad
+
+</div>
+
+</div>
+
+<h3 class="section-header">🎓 Formación</h3>
+
+<div class="content-section">
+
+<div class="education-item">
+<strong>Máster en Business Analytics & Data Science</strong> (En curso)  
+<div class="education-institution">IE Business School, Madrid</div>
+</div>
+
+<div class="education-item">
+<strong>Máster en Dirección de Empresas</strong> (En curso)  
+<div class="education-institution">IE Business School, Madrid</div>
+</div>
+
+<div class="education-item">
+<strong>Grado en Ciencias de la Computación e IA</strong> (2024)  
+<div class="education-institution">IE University, Madrid</div>
+</div>
+
+**Experiencia:**
+- Analista de Datos Junior en **Futurity Systems** (Barcelona)
+- Prácticas de ML & NLP en **Futurity Systems**
+- Desarrollador Full Stack en **Starlynr**
+
+**Idiomas:**
+
+<div class="skill-badges">
+<span class="skill-badge">Inglés (Nativo)</span>
+<span class="skill-badge">Árabe (Nativo)</span>
+<span class="skill-badge">Francés (Fluido)</span>
+<span class="skill-badge">Español (Intermedio)</span>
+</div>
+
+</div>
+
+<h3 class="section-header">🌟 Más Allá del Trabajo</h3>
+
+<div class="content-section">
+
+Cuando no estoy construyendo sistemas de datos, me encontrarás:
+- Jugando ajedrez ♟️ (los juegos de estrategia agudizan el pensamiento analítico)
+- En el campo de fútbol ⚽
+- Resolviendo puzzles de Sudoku
+- Explorando la escena de meetups tecnológicos de Madrid
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="cta-section">
+
+### What I'm Looking For
+
+I'm actively seeking opportunities in:
+
+- **Data Engineering**: Building robust ETL/ELT pipelines and data infrastructure
+- **ML Operations (MLOps)**: Deploying and monitoring ML systems at scale
+- **Analytics Engineering**: Creating the data layer that powers business intelligence
+
+**Location**: Madrid, Spain (EU work permit) | Open to remote and hybrid roles
+
+<a href="mailto:ayaacoub@student.ie.edu" class="btn-contact">Let's Connect!</a>
+
+</div>
+
+<script>
+function showTab(tabName) {
+  // Hide all tabs
+  document.getElementById('english-tab').style.display = 'none';
+  document.getElementById('spanish-tab').style.display = 'none';
+  
+  // Remove active class from all buttons
+  const buttons = document.querySelectorAll('.tab-button');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  
+  // Show selected tab and mark button as active
+  if (tabName === 'english') {
+    document.getElementById('english-tab').style.display = 'block';
+    buttons[0].classList.add('active');
+  } else {
+    document.getElementById('spanish-tab').style.display = 'block';
+    buttons[1].classList.add('active');
+  }
+}
+</script>

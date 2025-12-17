@@ -1,0 +1,520 @@
+---
+title: ""
+page-layout: full
+---
+
+<style>
+/* Dark Theme - Red & Black Projects */
+body {
+  background-color: #0a0a0a !important;
+  color: #f5f5f5 !important;
+}
+
+.projects-hero {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-bottom: 3px solid #DC2626;
+  margin-bottom: 4rem;
+}
+
+.projects-hero h1 {
+  font-size: 3.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 30px rgba(220, 38, 38, 0.3);
+}
+
+.projects-hero .subtitle {
+  font-size: 1.2rem;
+  color: #9ca3af;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem 2rem;
+}
+
+.intro-section {
+  max-width: 900px;
+  margin: 0 auto 4rem auto;
+  padding: 2.5rem;
+  background: #1a1a1a;
+  border-radius: 12px;
+  border-left: 4px solid #DC2626;
+  text-align: center;
+}
+
+.intro-section p {
+  color: #d1d5db;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.intro-section strong {
+  color: #EF4444;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin: 3rem 0;
+}
+
+.project-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  border: 2px solid #2a2a2a;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: #DC2626;
+  box-shadow: 0 12px 35px rgba(220, 38, 38, 0.4);
+}
+
+.project-header {
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  border-bottom: 2px solid #2a2a2a;
+}
+
+.project-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-size: 1.8rem;
+  color: #EF4444;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.project-type {
+  color: #DC2626;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-body {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+  background: rgba(220, 38, 38, 0.15);
+  color: #EF4444;
+  padding: 0.4rem 0.9rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.project-description {
+  color: #d1d5db;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.project-features {
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.project-features h4 {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.project-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.project-features li {
+  color: #d1d5db;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.project-features li::before {
+  content: '▸';
+  color: #DC2626;
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  font-size: 1.1rem;
+}
+
+.project-footer {
+  padding: 1.5rem 2rem;
+  border-top: 2px solid #2a2a2a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-link {
+  color: #EF4444;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  font-size: 1.05rem;
+}
+
+.project-link:hover {
+  color: #DC2626;
+  transform: translateX(5px);
+}
+
+.coming-soon-badge {
+  background: rgba(220, 38, 38, 0.2);
+  color: #EF4444;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(220, 38, 38, 0.4);
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #DC2626;
+  margin: 4rem 0 2rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid #DC2626;
+  font-weight: 700;
+  text-align: center;
+}
+
+.coming-soon-section {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 3rem;
+  background: #1a1a1a;
+  border-radius: 12px;
+  border: 2px solid #DC2626;
+  text-align: center;
+}
+
+.coming-soon-section h3 {
+  color: #DC2626;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.coming-soon-section p {
+  color: #d1d5db;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.coming-soon-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.feature-item {
+  background: #0a0a0a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 3px solid #DC2626;
+}
+
+.feature-item h4 {
+  color: #EF4444;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.feature-item p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.cta-section {
+  text-align: center;
+  margin: 4rem 0 2rem 0;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+  color: white !important;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+  margin: 0 0.5rem;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.5);
+}
+
+@media (max-width: 968px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .coming-soon-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-hero h1 {
+    font-size: 2.5rem;
+  }
+}
+</style>
+
+<div class="projects-hero">
+<h1>Projects Portfolio</h1>
+<p class="subtitle">Production-grade systems showcasing the intersection of Computer Science and Data Analytics</p>
+</div>
+
+<div class="projects-container">
+
+<div class="intro-section">
+<p>
+My portfolio demonstrates <strong>Type B Data Science</strong>—building the systems that insights flow through, not just the insights themselves. Each project follows production-grade engineering principles with modular architecture, test coverage, CI/CD automation, and API-first design.
+</p>
+</div>
+
+<div class="projects-grid">
+
+<!-- Project 1: Churn Prediction -->
+<div class="project-card">
+<div class="project-header">
+<div class="project-icon">🚀</div>
+<div class="project-title">Customer Churn Prediction System</div>
+<div class="project-type">End-to-End ML Pipeline</div>
+</div>
+
+<div class="project-body">
+<div class="project-tech">
+<span class="tech-tag">Python</span>
+<span class="tech-tag">FastAPI</span>
+<span class="tech-tag">Docker</span>
+<span class="tech-tag">Airflow</span>
+<span class="tech-tag">PostgreSQL</span>
+</div>
+
+<div class="project-description">
+Production-ready predictive engine with sub-200ms inference latency, featuring SHAP explainability and automated retraining. Deployed with full CI/CD automation and real-time scoring API.
+</div>
+
+<div class="project-features">
+<h4>Key Features</h4>
+<ul>
+<li>Random Forest classifier with Optuna hyperparameter tuning (85% AUC)</li>
+<li>FastAPI with Pydantic validation and auto-generated documentation</li>
+<li>Automated weekly retraining with Airflow orchestration</li>
+</ul>
+</div>
+</div>
+
+<div class="project-footer">
+<a href="https://github.com/anthonyyaacoub" target="_blank" class="project-link">View on GitHub →</a>
+<span class="coming-soon-badge">Case Study Coming Soon</span>
+</div>
+</div>
+
+<!-- Project 2: NLP Analytics -->
+<div class="project-card">
+<div class="project-header">
+<div class="project-icon">📊</div>
+<div class="project-title">Real-Time NLP Analytics Platform</div>
+<div class="project-type">Unstructured Data Pipeline</div>
+</div>
+
+<div class="project-body">
+<div class="project-tech">
+<span class="tech-tag">NLP</span>
+<span class="tech-tag">BERT</span>
+<span class="tech-tag">MongoDB</span>
+<span class="tech-tag">Scrapy</span>
+<span class="tech-tag">React</span>
+</div>
+
+<div class="project-description">
+Social media sentiment detection using state-of-the-art BERT models. Processes 10k+ documents daily with topic modeling, named entity recognition, and trend analysis.
+</div>
+
+<div class="project-features">
+<h4>Key Features</h4>
+<ul>
+<li>Transformer-based sentiment analysis with 87% accuracy</li>
+<li>Web scraping pipeline with rate limiting and error handling</li>
+<li>Interactive React dashboard with real-time updates</li>
+</ul>
+</div>
+</div>
+
+<div class="project-footer">
+<a href="https://github.com/anthonyyaacoub" target="_blank" class="project-link">View on GitHub →</a>
+<span class="coming-soon-badge">Case Study Coming Soon</span>
+</div>
+</div>
+
+<!-- Project 3: Streaming Data -->
+<div class="project-card">
+<div class="project-header">
+<div class="project-icon">⚡</div>
+<div class="project-title">Streaming Data Architecture</div>
+<div class="project-type">Systems Engineering</div>
+</div>
+
+<div class="project-body">
+<div class="project-tech">
+<span class="tech-tag">Kafka</span>
+<span class="tech-tag">BigQuery</span>
+<span class="tech-tag">Terraform</span>
+<span class="tech-tag">GCP</span>
+<span class="tech-tag">Python</span>
+</div>
+
+<div class="project-description">
+Real-time ETL pipeline processing high-volume event streams with Infrastructure-as-Code deployment. Cloud-native architecture with 99.9% uptime and auto-scaling capabilities.
+</div>
+
+<div class="project-features">
+<h4>Key Features</h4>
+<ul>
+<li>Apache Kafka for distributed event streaming at scale</li>
+<li>Terraform IaC for reproducible cloud infrastructure</li>
+<li>Real-time data warehouse integration with BigQuery</li>
+</ul>
+</div>
+</div>
+
+<div class="project-footer">
+<a href="https://github.com/anthonyyaacoub" target="_blank" class="project-link">View on GitHub →</a>
+<span class="coming-soon-badge">Case Study Coming Soon</span>
+</div>
+</div>
+
+<!-- Project 4: BI Dashboard -->
+<div class="project-card">
+<div class="project-header">
+<div class="project-icon">📈</div>
+<div class="project-title">Executive BI Dashboard</div>
+<div class="project-type">Analytics & Visualization</div>
+</div>
+
+<div class="project-body">
+<div class="project-tech">
+<span class="tech-tag">Tableau</span>
+<span class="tech-tag">SQL</span>
+<span class="tech-tag">Power BI</span>
+<span class="tech-tag">Python</span>
+<span class="tech-tag">DAX</span>
+</div>
+
+<div class="project-description">
+Interactive business intelligence platform with real-time KPI tracking, cohort analysis, and automated reporting. Enables data-driven decision making across the organization.
+</div>
+
+<div class="project-features">
+<h4>Key Features</h4>
+<ul>
+<li>Complex SQL queries with window functions for cohort analysis</li>
+<li>Interactive dashboards with drill-down capabilities</li>
+<li>Automated email reports with Python scripts</li>
+</ul>
+</div>
+</div>
+
+<div class="project-footer">
+<a href="https://github.com/anthonyyaacoub" target="_blank" class="project-link">View on GitHub →</a>
+<span class="coming-soon-badge">Case Study Coming Soon</span>
+</div>
+</div>
+
+</div>
+
+<h2 class="section-title">Detailed Case Studies Coming Soon</h2>
+
+<div class="coming-soon-section">
+<h3>📚 In-Depth Technical Documentation</h3>
+<p>
+I'm currently preparing comprehensive case studies for each project following the <strong>STAR format</strong> (Situation, Task, Action, Result). Each case study will provide deep technical insights into the engineering decisions, trade-offs, and business impact.
+</p>
+
+<div class="coming-soon-features">
+<div class="feature-item">
+<h4>📐 System Architecture</h4>
+<p>Detailed diagrams showing data flow, component interactions, and infrastructure design</p>
+</div>
+
+<div class="feature-item">
+<h4>💻 Code Samples</h4>
+<p>Production code examples demonstrating design patterns and best practices</p>
+</div>
+
+<div class="feature-item">
+<h4>🎯 Business Impact</h4>
+<p>Quantified results, KPIs, and ROI metrics from real-world deployments</p>
+</div>
+
+<div class="feature-item">
+<h4>🔴 Live Demos</h4>
+<p>Interactive applications and deployed APIs you can test yourself</p>
+</div>
+</div>
+
+<p style="margin-top: 2rem; color: #9ca3af;">
+<strong>Expected Launch:</strong> January 2025
+</p>
+</div>
+
+<div class="cta-section">
+<p style="color: #d1d5db; font-size: 1.15rem; margin-bottom: 2rem;">
+Want to discuss these projects or explore collaboration opportunities?
+</p>
+<a href="mailto:ayaacoub@student.ie.edu" class="btn-primary">Get In Touch</a>
+<a href="https://github.com/anthonyyaacoub" target="_blank" class="btn-primary" style="background: transparent; border: 2px solid #DC2626; color: #DC2626;">View GitHub Profile</a>
+</div>
+
+</div>

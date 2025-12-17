@@ -1,0 +1,593 @@
+---
+title: ""
+page-layout: full
+---
+
+<style>
+/* Dark Theme - Red & Black */
+body {
+  background-color: #0a0a0a !important;
+  color: #f5f5f5 !important;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  padding: 6rem 2rem;
+  text-align: center;
+  border-bottom: 3px solid #DC2626;
+  margin-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(220, 38, 38, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 30px rgba(220, 38, 38, 0.3);
+}
+
+.hero-section h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #DC2626;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-section h3 {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #9ca3af;
+  margin-bottom: 2.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.btn-red {
+  background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.btn-red:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.5);
+  border-color: #EF4444;
+}
+
+.btn-outline-red {
+  background: transparent;
+  color: #DC2626;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: 2px solid #DC2626;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-outline-red:hover {
+  background: #DC2626;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-align: center;
+  margin: 4rem 0 2rem 0;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #DC2626, transparent);
+}
+
+.about-section {
+  max-width: 900px;
+  margin: 0 auto 4rem auto;
+  padding: 2.5rem;
+  background: #1a1a1a;
+  border-radius: 12px;
+  border-left: 4px solid #DC2626;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.about-section p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #d1d5db;
+}
+
+.about-section strong {
+  color: #DC2626;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.project-card-dark {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 2px solid #2a2a2a;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-dark::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #DC2626, #EF4444);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.project-card-dark:hover::before {
+  transform: scaleX(1);
+}
+
+.project-card-dark:hover {
+  transform: translateY(-8px);
+  border-color: #DC2626;
+  box-shadow: 0 12px 35px rgba(220, 38, 38, 0.3);
+}
+
+.project-card-dark h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card-dark .project-type {
+  color: #DC2626;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-card-dark .project-tech {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.project-card-dark p {
+  color: #9ca3af;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.tech-badge-dark {
+  display: inline-block;
+  background: rgba(220, 38, 38, 0.2);
+  color: #EF4444;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin: 0.25rem;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  font-weight: 500;
+}
+
+.project-links {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #2a2a2a;
+}
+
+.project-links a {
+  color: #DC2626;
+  text-decoration: none;
+  margin-right: 1.5rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.project-links a:hover {
+  color: #EF4444;
+  text-decoration: underline;
+}
+
+.tech-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tech-category {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #2a2a2a;
+  transition: all 0.3s ease;
+}
+
+.tech-category:hover {
+  border-color: #DC2626;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.2);
+}
+
+.tech-category h4 {
+  color: #DC2626;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.tech-category p {
+  color: #9ca3af;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.philosophy-section {
+  background: #1a1a1a;
+  padding: 3rem;
+  border-radius: 12px;
+  margin: 4rem 0;
+  border: 2px solid #2a2a2a;
+  border-left: 4px solid #DC2626;
+}
+
+.philosophy-section h3 {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.philosophy-section ul {
+  list-style: none;
+  padding: 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.philosophy-section li {
+  color: #d1d5db;
+  font-size: 1.05rem;
+  padding: 1rem 0;
+  padding-left: 2rem;
+  position: relative;
+  line-height: 1.8;
+}
+
+.philosophy-section li::before {
+  content: '▸';
+  color: #DC2626;
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  font-size: 1.3rem;
+}
+
+.philosophy-section strong {
+  color: #EF4444;
+}
+
+.connect-section {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #1a1a1a;
+  border-radius: 12px;
+  margin: 4rem 0;
+  border: 2px solid #2a2a2a;
+}
+
+.connect-section p {
+  font-size: 1.2rem;
+  color: #d1d5db;
+  margin-bottom: 2rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  padding: 0.5rem 1rem;
+}
+
+.social-links a:hover {
+  color: #DC2626;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-section h2 {
+    font-size: 1.3rem;
+  }
+  
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<div class="hero-section">
+<div class="hero-content">
+
+# Anthony Yaacoub
+
+## Data Engineer | ML Systems | Business Analytics
+
+### Computer Scientist specializing in production-grade machine learning infrastructure and scalable data systems
+
+<div class="cta-buttons">
+[View Projects](projects/index.qmd){.btn-red}
+[Read Blog](blog/index.qmd){.btn-outline-red}
+[Contact Me](mailto:ayaacoub@student.ie.edu){.btn-outline-red}
+</div>
+
+</div>
+</div>
+
+<h2 class="section-title">About Me</h2>
+
+<div class="about-section">
+
+I'm a **Computer Scientist and Data Analyst** specializing in building production-grade machine learning systems and data infrastructure. Currently pursuing a Dual Master's in Management and Business Analytics at IE Business School in Madrid.
+
+My background bridges theoretical CS foundations with hands-on analytics, eliminating the "translation gap" between data science prototypes and production systems. I don't just build models—I build the **systems** that insights flow through.
+
+</div>
+
+---
+
+<h2 class="section-title">Featured Projects</h2>
+
+<div class="project-grid">
+
+<div class="project-card-dark">
+
+### 🚀 Customer Churn Prediction System
+
+<div class="project-type">End-to-End ML Pipeline</div>
+<div class="project-tech">FastAPI • Streamlit • Docker • Airflow</div>
+
+Production-ready predictive engine with sub-200ms inference latency, featuring SHAP explainability and automated retraining. Deployed with full CI/CD automation and real-time scoring API.
+
+<span class="tech-badge-dark">Python</span>
+<span class="tech-badge-dark">FastAPI</span>
+<span class="tech-badge-dark">Docker</span>
+<span class="tech-badge-dark">PostgreSQL</span>
+
+<div class="project-links">
+[View Case Study](projects/index.qmd) • [GitHub](https://github.com/anthonyyaacoub){target="_blank"}
+</div>
+
+</div>
+
+<div class="project-card-dark">
+
+### 📊 Real-Time NLP Analytics Platform
+
+<div class="project-type">Unstructured Data Pipeline</div>
+<div class="project-tech">Transformers • MongoDB • Scrapy</div>
+
+Social media sentiment detection using state-of-the-art BERT models. Processes 10k+ documents daily with topic modeling, named entity recognition, and trend analysis.
+
+<span class="tech-badge-dark">NLP</span>
+<span class="tech-badge-dark">Hugging Face</span>
+<span class="tech-badge-dark">MongoDB</span>
+<span class="tech-badge-dark">React</span>
+
+<div class="project-links">
+[View Case Study](projects/index.qmd) • [GitHub](https://github.com/anthonyyaacoub){target="_blank"}
+</div>
+
+</div>
+
+<div class="project-card-dark">
+
+### ⚡ Streaming Data Architecture
+
+<div class="project-type">Systems Engineering</div>
+<div class="project-tech">Apache Kafka • BigQuery • Terraform</div>
+
+Real-time ETL pipeline processing high-volume event streams with Infrastructure-as-Code deployment. Cloud-native architecture with 99.9% uptime and auto-scaling capabilities.
+
+<span class="tech-badge-dark">Kafka</span>
+<span class="tech-badge-dark">BigQuery</span>
+<span class="tech-badge-dark">Terraform</span>
+<span class="tech-badge-dark">GCP</span>
+
+<div class="project-links">
+[View Case Study](projects/index.qmd) • [GitHub](https://github.com/anthonyyaacoub){target="_blank"}
+</div>
+
+</div>
+
+<div class="project-card-dark">
+
+### 📈 Executive BI Dashboard
+
+<div class="project-type">Analytics & Visualization</div>
+<div class="project-tech">Tableau • SQL • Power BI</div>
+
+Interactive business intelligence platform with real-time KPI tracking, cohort analysis, and automated reporting. Enables data-driven decision making across the organization.
+
+<span class="tech-badge-dark">Tableau</span>
+<span class="tech-badge-dark">SQL</span>
+<span class="tech-badge-dark">Power BI</span>
+<span class="tech-badge-dark">Python</span>
+
+<div class="project-links">
+[View Case Study](projects/index.qmd) • [GitHub](https://github.com/anthonyyaacoub){target="_blank"}
+</div>
+
+</div>
+
+</div>
+
+---
+
+<h2 class="section-title">Tech Stack</h2>
+
+<div class="tech-stack-grid">
+
+<div class="tech-category">
+
+#### Languages
+Python • R • SQL • JavaScript • C++ • C# • TypeScript
+
+</div>
+
+<div class="tech-category">
+
+#### ML/AI
+Scikit-learn • PyTorch • TensorFlow • Hugging Face • MLflow • Optuna • Weights & Biases
+
+</div>
+
+<div class="tech-category">
+
+#### Data Engineering
+Apache Airflow • Kafka • dbt • Spark • Prefect • Dagster
+
+</div>
+
+<div class="tech-category">
+
+#### Web Development
+FastAPI • Flask • React • Node.js • Next.js • Express
+
+</div>
+
+<div class="tech-category">
+
+#### DevOps & Cloud
+Docker • Kubernetes • GitHub Actions • AWS • GCP • Azure • Terraform
+
+</div>
+
+<div class="tech-category">
+
+#### Databases
+PostgreSQL • MongoDB • MySQL • Redis • Neo4j • Snowflake • BigQuery
+
+</div>
+
+<div class="tech-category">
+
+#### Visualization
+Tableau • Power BI • Streamlit • Plotly • D3.js • Matplotlib
+
+</div>
+
+<div class="tech-category">
+
+#### Tools & Platforms
+Git • Unity • Jupyter • VS Code • Linux • Postman
+
+</div>
+
+</div>
+
+---
+
+<div class="philosophy-section">
+
+### Type B Data Science: I Build Systems, Not Just Models
+
+- **No Naked Notebooks**: Production code lives in modular Python packages with proper OOP design, not `.ipynb` files
+- **Test-Driven Development**: Every data pipeline and model has comprehensive unit tests with pytest and integration testing
+- **API-First Architecture**: ML models deployed as REST APIs with FastAPI, Pydantic validation, and auto-generated documentation
+- **CI/CD Automation**: GitHub Actions workflows for automated testing, linting, building, and deployment to production
+- **Design Patterns**: Object-oriented code using Strategy, Factory, Adapter, and Singleton patterns for maintainable systems
+- **Infrastructure as Code**: Docker containers, Terraform scripts, and Kubernetes manifests for reproducible deployments
+
+</div>
+
+---
+
+<div class="connect-section">
+
+<h2 class="section-title">Let's Connect</h2>
+
+Currently based in **Madrid, Spain** and open to opportunities in data engineering, ML operations, and analytics engineering roles.
+
+<div class="social-links">
+[📧 ayaacoub@student.ie.edu](mailto:ayaacoub@student.ie.edu)
+[💼 LinkedIn](https://linkedin.com/in/anthony-yaacoub-37590a1a6){target="_blank"}
+[💻 GitHub](https://github.com/anthonyyaacoub){target="_blank"}
+</div>
+
+</div>
