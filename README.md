@@ -141,7 +141,7 @@ MIT License - feel free to use this structure for your own portfolio.
 ## Contact
 
 - **Email**: ayaacoub@student.ie.edu
-- **LinkedIn**: [anthonyyaacoub](https://linkedin.com/in/anthonyyaacoub-37590a1a6)
+- **LinkedIn**: [anthonyyaacoub](https://www.linkedin.com/in/anthonyyaacoub/)
 - **GitHub**: [@anthonyyaacoub](https://github.com/anthonyyaacoub)
 
 ---
