@@ -1,13 +1,13 @@
 # Anthony Yaacoub - Portfolio Website
 
-[![Quarto Publish](https://github.com/anthony-yaacoub/portfolio/actions/workflows/publish.yml/badge.svg)](https://github.com/anthony-yaacoub/portfolio/actions/workflows/publish.yml)
+[![Quarto Publish](https://github.com/anthonyyaacoub/portfolio/actions/workflows/publish.yml/badge.svg)](https://github.com/anthonyyaacoub/portfolio/actions/workflows/publish.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Overview
 
 Production-grade personal portfolio built with Quarto, showcasing the intersection of Computer Science and Data Analytics. This website demonstrates engineering rigor through modular architecture, CI/CD automation, and bilingual content delivery.
 
-**Live Site:** [https://anthony-yaacoub.github.io](https://anthony-yaacoub.github.io)
+**Live Site:** [https://anthonyyaacoub.github.io](https://anthonyyaacoub.github.io)
 
 ## Features
 
@@ -51,7 +51,7 @@ portfolio-website/
 
 ```bash
 # Clone the repository
-git clone https://github.com/anthony-yaacoub/portfolio.git
+git clone https://github.com/anthonyyaacoub/portfolio.git
 cd portfolio
 
 # Install Python dependencies
@@ -141,8 +141,8 @@ MIT License - feel free to use this structure for your own portfolio.
 ## Contact
 
 - **Email**: ayaacoub@student.ie.edu
-- **LinkedIn**: [anthony-yaacoub](https://linkedin.com/in/anthony-yaacoub-37590a1a6)
-- **GitHub**: [@anthony-yaacoub](https://github.com/anthony-yaacoub)
+- **LinkedIn**: [anthonyyaacoub](https://linkedin.com/in/anthonyyaacoub-37590a1a6)
+- **GitHub**: [@anthonyyaacoub](https://github.com/anthonyyaacoub)
 
 ---
 
